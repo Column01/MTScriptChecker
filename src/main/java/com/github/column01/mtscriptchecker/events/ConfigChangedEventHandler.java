@@ -1,7 +1,7 @@
-package com.column01.mtscriptchecker.events;
+package com.github.column01.mtscriptchecker.events;
 
-import com.column01.mtscriptchecker.MTScriptChecker;
-import com.column01.mtscriptchecker.util.ConfigHandler.CONFIG_SETTINGS;
+import com.github.column01.mtscriptchecker.MTScriptChecker;
+import com.github.column01.mtscriptchecker.util.ConfigHandler.CONFIG_SETTINGS;
 
 import org.apache.logging.log4j.Logger;
 

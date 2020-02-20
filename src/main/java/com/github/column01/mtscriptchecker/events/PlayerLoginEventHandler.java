@@ -1,8 +1,8 @@
-package com.column01.mtscriptchecker.events;
+package com.github.column01.mtscriptchecker.events;
 
-import com.column01.mtscriptchecker.network.packet.PacketSender;
-import com.column01.mtscriptchecker.network.packet.ScriptsPacket;
-import com.column01.mtscriptchecker.util.ConfigHandler;
+import com.github.column01.mtscriptchecker.network.packet.PacketSender;
+import com.github.column01.mtscriptchecker.network.packet.ScriptsPacket;
+import com.github.column01.mtscriptchecker.util.ConfigHandler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;

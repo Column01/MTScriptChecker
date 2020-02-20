@@ -1,4 +1,4 @@
-package com.column01.mtscriptchecker.util;
+package com.github.column01.mtscriptchecker.util;
 
 import java.io.File;
 import java.io.FileReader;
@@ -9,8 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 import com.google.gson.Gson;
 
-import com.column01.mtscriptchecker.MTScriptChecker;
-import com.column01.mtscriptchecker.objects.HashObject;
+import com.github.column01.mtscriptchecker.MTScriptChecker;
+import com.github.column01.mtscriptchecker.objects.HashObject;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;

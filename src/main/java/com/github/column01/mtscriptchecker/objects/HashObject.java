@@ -1,4 +1,4 @@
-package com.column01.mtscriptchecker.objects;
+package com.github.column01.mtscriptchecker.objects;
 
 public class HashObject {
     private String hash;

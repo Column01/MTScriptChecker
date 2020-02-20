@@ -1,6 +1,6 @@
-package com.column01.mtscriptchecker.network.packet;
+package com.github.column01.mtscriptchecker.network.packet;
 
-import com.column01.mtscriptchecker.MTScriptChecker;
+import com.github.column01.mtscriptchecker.MTScriptChecker;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;

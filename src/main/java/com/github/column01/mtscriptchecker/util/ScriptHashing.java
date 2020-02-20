@@ -1,4 +1,4 @@
-package com.column01.mtscriptchecker.util;
+package com.github.column01.mtscriptchecker.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -9,7 +9,7 @@ import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.column01.mtscriptchecker.MTScriptChecker;
+import com.github.column01.mtscriptchecker.MTScriptChecker;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
