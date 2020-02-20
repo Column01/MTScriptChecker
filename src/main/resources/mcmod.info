@@ -1,0 +1,10 @@
+[{
+  "modid": "mtscheck",
+  "name": "MTScriptChecker",
+  "description": "Hashes all minetweaker scripts to detect when the client is missing scripts present on the server.",
+  "version": "1.0-SNAPSHOT",
+  "mcversion": "1.12.2",
+  "logoFile": "assets/examplemod/textures/logo.png",
+  "authorList": ["Column01"],
+  "credits": "CraftTweaker for maintaining such a cool mod"
+}]
