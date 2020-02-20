@@ -1,9 +1,7 @@
 package com.github.column01.mtscriptchecker;
 
-import com.github.column01.mtscriptchecker.events.ConfigChangedEventHandler;
-import com.github.column01.mtscriptchecker.events.PlayerLoginEventHandler;
+import com.github.column01.mtscriptchecker.events.EventHandlers;
 import com.github.column01.mtscriptchecker.network.packet.PacketSender;
-import com.github.column01.mtscriptchecker.util.ConfigHandler;
 import com.github.column01.mtscriptchecker.util.ScriptHashing;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
@@ -17,7 +15,7 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = MTScriptChecker.MODID, name = MTScriptChecker.NAME, version = MTScriptChecker.VERSION, dependencies = "after:crafttweaker")
+@Mod(modid = MTScriptChecker.MODID, name = MTScriptChecker.NAME, version = MTScriptChecker.VERSION, dependencies = "after:crafttweaker", acceptableRemoteVersions = "*")
 public class MTScriptChecker {
     public static final String MODID = "mtscheck";
     public static final String NAME = "MTScriptChecker";
@@ -32,11 +30,9 @@ public class MTScriptChecker {
         logger = LogManager.getLogger(MODID);
         logger.info(NAME + "is loading.");
         logger.info("Subscribing to the player login event.");
-        MinecraftForge.EVENT_BUS.register(new PlayerLoginEventHandler());
-        MinecraftForge.EVENT_BUS.register(new ConfigChangedEventHandler());
+        MinecraftForge.EVENT_BUS.register(new EventHandlers());
         logger.info("Initializing packet sender and config");
         PacketSender.init();
-        ConfigHandler.init();
     }
 
     @EventHandler

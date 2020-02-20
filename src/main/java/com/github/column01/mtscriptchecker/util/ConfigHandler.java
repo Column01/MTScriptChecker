@@ -12,17 +12,8 @@ import com.google.gson.Gson;
 import com.github.column01.mtscriptchecker.MTScriptChecker;
 import com.github.column01.mtscriptchecker.objects.HashObject;
 
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.common.config.Config.Name;
-import net.minecraftforge.common.config.Config.Type;
-
 public class ConfigHandler {
     public static Logger logger = MTScriptChecker.getLogger();
-
-    public static void init() {
-        ConfigManager.sync(MTScriptChecker.MODID, Type.INSTANCE);
-    }
 
     // Returns the hash object stored in hash.json. If there is an error, it will return and empty string.
     public static String getHashString() {
@@ -33,6 +24,7 @@ public class ConfigHandler {
                 file.mkdirs();
             }
             HashObject hashObject = gson.fromJson(new FileReader("config/MTScriptChecker/hash.json"), HashObject.class);
+            logger.info("getHashString() called. " + hashObject.getHash());
             return hashObject.getHash();
         } catch (Exception e) {
             logger.error("Error reading scripts hash from storage file.");
@@ -59,12 +51,5 @@ public class ConfigHandler {
             logger.error("Error writing scripts hash to storage file.");
             logger.error(ExceptionUtils.getStackTrace(e));
         }
-    }
-    
-    // Not used. This is the config annotation stuff that I might use later on in development.
-    @Config(modid = MTScriptChecker.MODID, name = "MTScriptChecker", type = Type.INSTANCE)
-    public static class CONFIG_SETTINGS {
-        @Name("Hashed Scripts Value")
-        public static String hash = "";
     }
 }

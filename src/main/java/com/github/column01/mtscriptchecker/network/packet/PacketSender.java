@@ -13,7 +13,7 @@ public class PacketSender {
     // Initialize the packet handlers
     public static void init() {
         int id = 0;
-        INSTANCE.registerMessage(ScriptsPacket.Handler.class, ScriptsPacket.class, id++, Side.CLIENT);
+        INSTANCE.registerMessage(ScriptsPacket.Handler.class, ScriptsPacket.class, id++, Side.SERVER);
     }
 
     // Send packet to player

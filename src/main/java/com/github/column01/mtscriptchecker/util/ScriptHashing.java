@@ -27,30 +27,44 @@ public class ScriptHashing {
         Side s = FMLCommonHandler.instance().getEffectiveSide();
 
         if(s == Side.CLIENT) {
+            // Collect a list of script files
             List<File> scripts = getScriptFiles();
             List<String> hashes = new ArrayList<String>();
+            // If it is not an empty list, generate a list of hashes for each file in the scripts list
             if(!scripts.isEmpty()){
                 for(File f: scripts) {
                     String hash = getHex(createChecksum(f));
                     hashes.add(hash);
                 }
+                // Get the final script hash by hashing the list of hashes and then getting the hex interpretation of that.
+                // Then write the hash to file.
                 String finalScriptHash = getHex(createListChecksum(hashes));
                 logger.info("Calculated Scripts hash: " + finalScriptHash);
                 ConfigHandler.writeHashString(finalScriptHash);
+            } else {
+                // MD5 hash of the MODID so the hash.json file is created regardless.
+                ConfigHandler.writeHashString("D8ED1479D5F8D5305C5471B9737BBEBE");
             }
         }
 
         if(s == Side.SERVER) {
+            // Collect a list of script files
             List<File> scripts = getScriptFiles();
             List<String> hashes = new ArrayList<String>();
+            // If it is not an empty list, generate a list of hashes for each file in the scripts list
             if(!scripts.isEmpty()){
                 for(File f: scripts) {
                     String hash = getHex(createChecksum(f));
                     hashes.add(hash);
                 }
+                // Get the final script hash by hashing the list of hashes and then getting the hex interpretation of that.
+                // Then write the hash to file.
                 String finalScriptHash = getHex(createListChecksum(hashes));
                 logger.info("Calculated Scripts hash: " + finalScriptHash);
                 ConfigHandler.writeHashString(finalScriptHash);
+            } else {
+                // MD5 hash of the MODID so the hash.json file is created regardless.
+                ConfigHandler.writeHashString("D8ED1479D5F8D5305C5471B9737BBEBE");
             }
         }
     }
