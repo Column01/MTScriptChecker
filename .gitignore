@@ -1,8 +1,6 @@
 
 .gradle/
 
-.idea/
-
 .settings/
 
 .vscode/
@@ -14,11 +12,5 @@ bin/
 .classpath
 
 .project
-
-*.ipr
-
-*.iws
-
-*.iml
 
 *.code-workspace
